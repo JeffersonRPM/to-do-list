@@ -111,7 +111,7 @@ hr {
     border-radius: 30px;
     font-weight: 600;
     color: var(--darkgray-color);
-    background-color: var(--white-color);  
+    background-color: var(--white-color);
 }
 
 .btn-clear:hover {
@@ -124,11 +124,23 @@ hr {
         background-color: var(--white-color);
     }
 
+    h1 {
+        font-size: 50px;
+    }
+
     .container {
         padding: 50px 20px;
     }
 
     .input-to-do {
-        width: 300px;
+        width: 250px;
+    }
+
+    .flex-input-btn {
+        margin-bottom: 30px !important;
+    }
+
+    .btn-clear {
+        margin-top: 30px;
     }
 }

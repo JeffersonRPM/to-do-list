@@ -118,7 +118,7 @@ function verify_div_ul() {
         if (flex_btn_clear) {
             flex_btn_clear.style.display = 'none';
         }
-    
+
         if (flex_input_btn) {
             flex_input_btn.style.marginBottom = '0px';
         }
@@ -135,6 +135,24 @@ function verify_div_ul() {
 }
 
 verify_div_ul();
+
+function mobile() {
+    return window.innerWidth <= 768;
+}
+
+function set_max_length() {
+    const input = document.querySelector('.input-to-do');
+
+    if (mobile()) {
+        input.setAttribute('maxlength', '25');
+    } else {
+        input.setAttribute('maxlength', '50');
+    }
+}
+
+window.addEventListener('load', set_max_length);
+
+window.addEventListener('resize', set_max_length);
 
 btn_add_to_do.addEventListener('click', function () {
     if (!input_to_do.value) return;
@@ -157,16 +175,16 @@ document.addEventListener('click', function (e) {
 
     if (el.classList.contains('img-delete')) {
         el.parentElement.parentElement.parentElement.remove();
-        save_task();
 
         window.location.reload();
+        save_task();
     }
 
     if (el.classList.contains('btn-clear')) {
-        clear_task();
-        save_task();
 
         window.location.reload();
+        clear_task();
+        save_task();
     }
-
 });
+
