@@ -139,12 +139,16 @@ verify_div_ul();
 btn_add_to_do.addEventListener('click', function () {
     if (!input_to_do.value) return;
     create_task(input_to_do.value);
+
+    window.location.reload();
 });
 
 input_to_do.addEventListener('keypress', function (e) {
     if (e.keyCode === 13) {
         if (!input_to_do.value) return;
         create_task(input_to_do.value);
+
+        window.location.reload();
     }
 });
 
@@ -154,6 +158,8 @@ document.addEventListener('click', function (e) {
     if (el.classList.contains('img-delete')) {
         el.parentElement.parentElement.parentElement.remove();
         save_task();
+
+        window.location.reload();
     }
 
     if (el.classList.contains('btn-clear')) {
